@@ -67,6 +67,13 @@ controllerDirector.getProfile = function (req, res) {
   })
 };
 
+controllerDirector.getProfileTest = function (req, res) {
+  sequelize.query('select * from users where users."githubID" = ' + req.cookies.githubID + ' join knowntags as knowntags on users.id = knowntags."userId" join wantedtags as wantedtags on users.id = wantedtags."userId"; join userprojects as userprojects on user.id = userprojects."userId";'
+).done( function (results){
+    res.send(results)
+  })
+}
+
 controllerDirector.createProject = function(req, res) {
   Project.create({
     projectName: req.body.name,
