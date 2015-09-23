@@ -1,4 +1,5 @@
 var React = require('react');
+var Select = require('react-select');
 
 var ProjectForm = React.createClass({
 	getInitialState: function() {
@@ -8,8 +9,10 @@ var ProjectForm = React.createClass({
 			description: '',
 			tools: '',
 			learn: '',
-			partner: ''
+			partner: '',
+			options: []
 		}
+
 	},
 	onChangeName: function() {
    this.setState({name: event.target.value});
@@ -27,8 +30,17 @@ var ProjectForm = React.createClass({
 	 this.setState({learn: event.target.value});
 	},
 	onChangePartner: function(value) {
-	 this.setState({partner: event.target.value});
+		console.log(value)
+	 this.setState({partner: ''+value+''});
 	},
+	  componentDidMount: function() {
+    $.getJSON('/api/users', function(result) {
+      result = result.map(function (element, index) {
+        return ({value: element.username, label: element.username})
+      })
+       this.setState({options: result});
+    }.bind(this))
+  },
   handle: function (e) {
     e.preventDefault();
     var that = this;
@@ -39,7 +51,7 @@ var ProjectForm = React.createClass({
 	    sendObject.tools = this.state.tools;
 	    sendObject.learn = this.state.learn;
 	    sendObject.partner = this.state.partner;
-	    // console.log(sendObject);
+	    console.log(sendObject);
     $.ajax({
       url: '/createProject',
       contentType: 'application/json',
@@ -67,7 +79,7 @@ var ProjectForm = React.createClass({
 					<div className="row">
 					  <div className="form-group col-xs-12 col-sm-8">
 					    <label>GitHubLink</label>
-					    <input required pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,200}$" type="text" className="form-control" value={this.state.github} placeholder="GitHubLink" onChange={this.onChangeGithub}/>
+					    <input  type="text" className="form-control" value={this.state.github} placeholder="GitHubLink" onChange={this.onChangeGithub}/>
 					  </div>
 					</div>
 					<div className="row">
@@ -90,9 +102,8 @@ var ProjectForm = React.createClass({
 					</div>
 					<div className="row">
 					  <div className="form-group col-xs-12 col-sm-8">
-					    <label>Partners User Name</label>
-					    <input required pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,500}$" type="text" className="form-control" value={this.state.partner} placeholder="Partners User Name" onChange={this.onChangePartner}/>
-					  </div>
+                <Select name="form-field-name" placeholder={this.state.partner} required pattern="^[a-zA-Z][a-zA-Z0-9\.]{1,50}$" options={this.state.options}  onChange={ this.onChangePartner} />
+              </div>
 					</div>
 					<div className="col-xs-12 col-sm-6 col-sm-offset-3">
 					  <input type="submit" value="SUBMIT" name="submit" className="btn btn-primary btn-lg btn-block" />

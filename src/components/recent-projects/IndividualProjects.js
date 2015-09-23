@@ -1,9 +1,11 @@
 var React = require('react');
+var Router= require('react-router');
+var Route = Router.Route;
+var Link = Router.Link;
 var IndividualProjects = React.createClass({
 	contextTypes: {
 	router: React.PropTypes.func.isRequired
 	},
-
 
 	getInitialState: function() {
 		return {
@@ -12,9 +14,11 @@ var IndividualProjects = React.createClass({
 			description: '',
 			tools: '',
 			learn: '',
-			partner: ''
+			partner1: '',
+			partner2: '',
 		};
 	},
+
 	componentDidMount: function() {
 		var params = this.context.router.getCurrentParams();
 		$.getJSON('/recentProjects/' + params.id  , function(data){
@@ -24,11 +28,16 @@ var IndividualProjects = React.createClass({
 				description: data.description,
 				tools: data.tools,
 				learn: data.learned,
-				partner: data.projectowner[0].username + ",  " + data.projectowner[1].username
+				partner1: data.projectowner[0].username,
+				partner2: data.projectowner[1].username
 			});
 		}.bind(this));
 	},
+
 	render: function(){
+		var space = "   |   ";
+		var profile1 = "/profile/"+this.state.partner1
+		var profile2 = "/profile/"+this.state.partner2
 		return (
 			<div>
 				<div className="row">
@@ -40,7 +49,9 @@ var IndividualProjects = React.createClass({
 				<div className="row">
 					<div className="form-group col-xs-12 col-sm-8">
 					  <label>GitHubLink</label>
-					    <p className="bordered"> {this.state.github} </p>
+						  <div className="bordered">
+						    <a href={this.state.github}>Projects Github</a>
+						  </div>
 					</div>
 				</div>
 				<div className="row">
@@ -63,8 +74,11 @@ var IndividualProjects = React.createClass({
 				</div>
 				<div className="row">
 					 <div className="form-group col-xs-12 col-sm-8">
-					   <label>Partners User Name</label>
-					   <p className="bordered">{this.state.partner}</p>
+					   <label>Authors</label><br/>
+						   <div className="bordered">
+									<Link to={profile1}><strong>{this.state.partner1}{space}</strong></Link>
+									<Link to={profile2}><strong>{this.state.partner2}</strong></Link>
+								</div>
 					 </div>
 				</div>
       </div>

@@ -18,7 +18,7 @@ sequelize = new Sequelize(config.get('database.database'), config.get('database.
   dialectOptions: {
     ssl: true
   },
-  // logging: false
+  logging: false
 });
 
 var User = require('./db_models/userModel.js');

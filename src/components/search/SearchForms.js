@@ -13,7 +13,8 @@ var SearchForms = React.createClass({
       tags: [],
       partner: '',
       learn: '',
-      data: []
+      data: [],
+      noResults: ''
     }
   },
   onChangePartner: function(value) {
@@ -45,11 +46,17 @@ var SearchForms = React.createClass({
       contentType: 'application/json',
       type: 'POST',
       data: JSON.stringify(sendObject),
-
+// error right now
       success: function(results) {
+      	if(results.length === 0){
+      		that.setState({noResults:'Sorry No Results Found'});
+      		that.setState({data:[]});
+      	} else {
+      	that.setState({noResults:''});
         that.setState({data:results});
         console.log(results);
-      }.bind(this),
+        }
+      },
 
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
@@ -102,6 +109,7 @@ var SearchForms = React.createClass({
 					<div className="row">
 						<div className="col-xs-12">
 		        <SearchResults data={this.state.data}/>
+		        {this.state.noResults}
 		      </div>
 					</div>
 				</div>

@@ -5,7 +5,7 @@ render: function(){
 	return (
 		<div className="row">
       <div className="col-xs-12 col-sm-4 col-sm-push-8">
-        <p>
+        <p className= "homehero">
           Pair with me is a site deticated to finding the optimal pair programming partner for you! We dedicate our self to making sure anyone can find the person they want to work with to ensure they have very best experience. We hope you enjoy and find our site helpful!
         </p>
         <p className="text-center">
