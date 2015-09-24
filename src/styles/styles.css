@@ -8,6 +8,10 @@ body{
 h4 {
   font-size: 16px;
 }
+.links{
+  padding-left: 15px;
+  font-size: 2.0rem;
+}
 .header{
   /*background-color: #f0f03d;*/
   text-shadow: 1px 1px 2px rgba(250, 250, 250, 1);
