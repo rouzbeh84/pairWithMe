@@ -15,8 +15,7 @@ var Header = React.createClass({
 		});
 	},
 	render: function(){
-				console.log("header",this.state.active);
-
+	
 		var profile = <a href="/auth/github/" >Profile</a>;
 		var search = <a href="/auth/github/" >Search</a>;;
 		if(document.cookie){

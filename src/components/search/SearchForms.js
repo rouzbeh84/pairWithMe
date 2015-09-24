@@ -49,7 +49,7 @@ var SearchForms = React.createClass({
 // error right now
       success: function(results) {
       	if(results.length === 0){
-      		that.setState({noResults:'Sorry, No Results Found'});
+      		that.setState({noResults:'Sorry, No Partners Found :`('});
       		that.setState({data:[]});
       	} else {
       	that.setState({noResults:''});
@@ -108,7 +108,11 @@ var SearchForms = React.createClass({
 					<div className="row">
 						<div className="col-xs-12">
 		        <SearchResults data={this.state.data}/>
-		        {this.state.noResults}
+            <div className="text-center">
+              <p className="noresults">
+		            {this.state.noResults}
+              </p>
+            </div>
 		      </div>
 					</div>
 				</div>
