@@ -22,6 +22,11 @@ var ProfileForm = React.createClass({
       want: ''
     }
   },
+  // set temp variable so tags are selectable without typing out
+  valueHolder: {
+    have: '',
+    want: ''
+  },
 
   // sets value holder to a temp variable to hold user input
   onChangeTeacher: function() {
@@ -35,11 +40,11 @@ var ProfileForm = React.createClass({
   },
   onChangeHave: function(value) {
     var haveTags = value.replace(/ /g, '-')
-    this.setState({have:haveTags});
+    this.valueHolder.have=haveTags;
   },
   onChangeWant: function(value) {
     var wantTags = value.replace(/ /g, '-')
-    this.setState({want:wantTags}); 
+    this.valueHolder.want=want; 
   },
 // onChange sets a value for send object
   componentDidMount: function() {
@@ -59,8 +64,8 @@ var ProfileForm = React.createClass({
     sendObject.teacher = this.state.teacher;
     sendObject.collaborator = this.state.collaborator;
     sendObject.student = this.state.student;
-    sendObject.have = this.state.have;
-    sendObject.want = this.state.want;
+    sendObject.have = this.valueHolder.have;
+    sendObject.want = this.valueHolder.want;
     console.log(sendObject);
     $.ajax({
       url: '/updateProfile',
