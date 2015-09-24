@@ -6,20 +6,6 @@ var Tag = require('./tagModel.js');
 
 var userController = {};
 
-userController.signIn = function(req,res) {
-  User.findOrCreate({where: {username: req.user.username}, defaults: {
-    githubID: req.user.id, githubProfileURL: req.user.profileUrl,
-    githubProfileImage: req.user.profilePic, token: req.user.token, email: req.user.email}}).spread(function(user, created) {
-      res.cookie('githubID', user.githubID);
-      res.cookie('token', user.token);
-    if (created === true) {
-      res.redirect('/profileEditor');
-    }
-    else {
-      res.redirect('/profile');
-    }
-  })
-};
 
 
 userController.updateProfile = function (req, res) {
