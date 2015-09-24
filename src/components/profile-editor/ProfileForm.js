@@ -29,6 +29,7 @@ var ProfileForm = React.createClass({
       have: '',
       want: ''
   },
+  // sets value holder to a temp variable to hold user input
   onChangeTeacher: function() {
     this.valueHolder.teacher = 'true';
   },
@@ -44,8 +45,11 @@ var ProfileForm = React.createClass({
   },
   onChangeWant: function(value) {
     var wantTags = value.replace(/ /g, '-')
-    this.valueHolder.want = wantTags;  },
+    this.valueHolder.want = wantTags; 
+  },
+// onChange sets a value for send object
   componentDidMount: function() {
+    // gathers all tags in database
     $.getJSON('/tags', function(result) {
       result = result.map(function (element, index) {
         return ({value: element.tagName, label: element.tagName})
@@ -54,6 +58,7 @@ var ProfileForm = React.createClass({
     }.bind(this))
   },
   handle: function (e) {
+    // sets object keys and values based on input to send to database
         e.preventDefault();
     var that = this;
     var sendObject = {};
@@ -69,7 +74,7 @@ var ProfileForm = React.createClass({
       type: 'POST',
       data: JSON.stringify(sendObject),
       success: function(data) {
-
+        // redirects to profile page on submission
         window.location.pathname = '/profile';
       }.bind(this),
 

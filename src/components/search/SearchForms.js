@@ -28,6 +28,7 @@ var SearchForms = React.createClass({
     })
   },
   componentDidMount: function() {
+    // returns all the tags in databse for easy selection
     $.getJSON('/tags', function(result) {
       result = result.map(function (element, index) {
         return ({value: element.tagName, label: element.tagName})
@@ -36,6 +37,7 @@ var SearchForms = React.createClass({
     }.bind(this))
   },
   handle: function (e) {
+    // sets key values based on input for database
     e.preventDefault();
     var that = this;
     var sendObject = {};

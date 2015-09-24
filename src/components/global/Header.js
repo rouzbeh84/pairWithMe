@@ -15,7 +15,7 @@ var Header = React.createClass({
 		});
 	},
 	render: function(){
-	
+	// setting active allows us to change the active tage based on current page
 		var profile = <a href="/auth/github/" >Profile</a>;
 		var search = <a href="/auth/github/" >Search</a>;;
 		if(document.cookie){
