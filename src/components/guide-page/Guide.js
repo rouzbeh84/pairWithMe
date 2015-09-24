@@ -4,10 +4,7 @@ var Resources = require("./Resources.js");
 var Questions = require("./Questions.js");
 var Guide = React.createClass({
 	render: function(){
-		// console.log(this.props.params.read);
-	/*This function adds our header to the top and bottom of whichever component we
-		are serving
-	*/
+		// this is the parent function for guide page
 		return (
 			<div>
 				<h1>

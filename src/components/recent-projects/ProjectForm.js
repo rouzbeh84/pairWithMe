@@ -33,7 +33,9 @@ var ProjectForm = React.createClass({
 		console.log(value)
 	 this.setState({partner: ''+value+''});
 	},
+	// sets a new state to send based on input
 	componentDidMount: function() {
+		// gathers all users in database for easy partner selection
     $.getJSON('/api/users', function(result) {
       result = result.map(function (element, index) {
         return ({value: element.username, label: element.username})
@@ -42,6 +44,7 @@ var ProjectForm = React.createClass({
     }.bind(this))
   },
   handle: function (e) {
+  	// sets key values to send to database
     e.preventDefault();
     var that = this;
     var sendObject = {};

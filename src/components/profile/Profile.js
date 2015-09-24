@@ -22,6 +22,7 @@ var Profile = React.createClass({
 		};
 	},
 	componentDidMount: function() {
+		// gathers the info entered in from profile editor
 		$.getJSON('/api/profile', function(data){
 			if(data.teacher) {
 				var teach = "Teacher";
@@ -54,7 +55,7 @@ var Profile = React.createClass({
 		}.bind(this));
 	},
 	render: function(){
-
+// mapps out and configures this users projects to display propersly by sending to Projects component
 		var userProj = this.state.projects.map(function(element, index){
 			return(<Projects className="col-xs-12 col-sm-6 col-md-4 projects-box" title={element.projectName.slice(0,17)} tools={element.tools.slice(0,17)} description={element.description.slice(0,17)} route={element.id} key={index}/>)
 		})

@@ -7,6 +7,7 @@ var RecentProjects = React.createClass({
 		};
 	},
 	componentDidMount: function() {
+		// returns all projects for project page
 		$.getJSON('/api/projects', function(data){
 			this.setState({projects:data})
 		}.bind(this));
