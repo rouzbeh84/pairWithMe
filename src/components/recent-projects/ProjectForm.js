@@ -54,7 +54,6 @@ var ProjectForm = React.createClass({
 	    sendObject.tools = this.state.tools;
 	    sendObject.learn = this.state.learn;
 	    sendObject.partner = this.state.partner;
-	    console.log(sendObject);
     $.ajax({
       url: '/createProject',
       contentType: 'application/json',
@@ -62,7 +61,6 @@ var ProjectForm = React.createClass({
       data: JSON.stringify(sendObject),
       success: function(data) {
         window.location.pathname = '/project/'+data;
-        console.log(data.id);
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
