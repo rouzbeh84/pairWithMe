@@ -7,13 +7,12 @@ var RecentProjects = React.createClass({
 		};
 	},
 	componentDidMount: function() {
+		// returns all projects for project page
 		$.getJSON('/api/projects', function(data){
-			console.log("proj", data);
 			this.setState({projects:data})
 		}.bind(this));
 	},
 	render: function() {
-		console.log("in render", this.state.projects);
 		var projectList = this.state.projects.map(function(element, index){
 			return (<Projects className="col-xs-12" title={element.projectName} description={element.description} tools={element.tools} route={element.id} key={index}/>)
 		});

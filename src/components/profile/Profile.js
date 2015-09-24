@@ -22,6 +22,7 @@ var Profile = React.createClass({
 		};
 	},
 	componentDidMount: function() {
+		// gathers the info entered in from profile editor
 		$.getJSON('/api/profile', function(data){
 			if(data.teacher) {
 				var teach = "Teacher";
@@ -39,7 +40,6 @@ var Profile = React.createClass({
 				return (<div className="tags">{element.tagName}</div>);
 			});
 			var ownedproject = data.ownedproject;
-			console.log(ownedproject);
 			this.setState({
 				username: data.username,
 				githubLink: data.githubProfileURL,
@@ -51,13 +51,12 @@ var Profile = React.createClass({
 				student: learn,
 				projects: ownedproject
 			});
-			console.log(this.state.username);
-			console.log(this.state.githubLink);
+
 		}.bind(this));
 	},
 	render: function(){
-
-		var userProj = this.state.projects.map(function(element, index){
+// mapps out and configures this users projects to display propersly by sending to Projects component
+		var userProj = this.state.projects.reverse().map(function(element, index){
 			return(<Projects className="col-xs-12 col-sm-6 col-md-4 projects-box" title={element.projectName.slice(0,17)} tools={element.tools.slice(0,17)} description={element.description.slice(0,17)} route={element.id} key={index}/>)
 		})
 

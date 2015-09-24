@@ -21,10 +21,9 @@ var UsersProfile = React.createClass({
 		};
 	},
 	componentDidMount: function() {
+		// using param allows us to get the current value in the url for a specific route
 		var params = this.context.router.getCurrentParams();
-		console.log(params.user);
 		$.getJSON('/api/profile/'+params.user, function(data){
-			console.log("returned",data)
 			if(data.teacher) {
 				var teach = "Teacher";
 			}
@@ -41,7 +40,6 @@ var UsersProfile = React.createClass({
 				return (<div className="btn btn-xs tags">{element.tagName +" "}</div>);
 			});
 			var ownedproject = data.ownedproject;
-			console.log(ownedproject);
 			this.setState({
 				username: data.username,
 				githubLink: data.githubProfileURL,
@@ -57,6 +55,7 @@ var UsersProfile = React.createClass({
 		}.bind(this));
 	},
 	render: function() {
+		// allows us to open up an email upon clicking
 		var plus = "mailto:"+this.state.email
 		var otherProjs = this.state.projects.map(function(element, index){
 			return(<Projects className="col-xs-12 col-sm-6 col-md-4" title={element.projectName.slice(0,17)} tools={element.tools.slice(0,17)} description={element.description.slice(0,17)} route={element.id} key={index}/>)

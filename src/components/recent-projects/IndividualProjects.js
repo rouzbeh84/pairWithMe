@@ -20,6 +20,7 @@ var IndividualProjects = React.createClass({
 	},
 
 	componentDidMount: function() {
+		// sets value to info in database
 		var params = this.context.router.getCurrentParams();
 		$.getJSON('/recentProjects/' + params.id  , function(data){
 			this.setState({

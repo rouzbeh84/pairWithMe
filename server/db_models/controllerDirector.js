@@ -60,19 +60,18 @@ controllerDirector.updateProfile = function (req, res) {
   })
 };
 
+controllerDirector.cookie = function (req, res) {
+  res.cookie('githubID', '13021947');
+  res.cookie('token', '74d41c1ef444511a96d8454fcc79ff3090cd7f8f');
+  res.redirect('/profile');
+}
+
 controllerDirector.getProfile = function (req, res) {
   User.findOne({where: {githubID: req.cookies.githubID},
     include: [{model: Tag, as: 'known'}, {model: Tag, as: 'want'}, {model: Project, as: 'ownedproject'}]}).done(function (user) {
     res.send(user);
   })
 };
-
-controllerDirector.getProfileTest = function (req, res) {
-  sequelize.query('select * from users where users."githubID" = ' + req.cookies.githubID + ' join knowntags as knowntags on users.id = knowntags."userId" join wantedtags as wantedtags on users.id = wantedtags."userId"; join userprojects as userprojects on user.id = userprojects."userId";'
-).done( function (results){
-    res.send(results)
-  })
-}
 
 controllerDirector.createProject = function(req, res) {
   Project.create({
@@ -119,9 +118,9 @@ controllerDirector.search = function (req, res) {
       skill = 'known';
     }
     whereQuery[partner] = true;
+    console.log(whereQuery);
     Tag.findOne({where: {tagName: req.body.tag},
     include: [{model: User, as: skill, where: whereQuery, include: [{model: Tag, as: 'known'}, {model: Tag, as: 'want'}]}]}).done(function (tag) {
-      // console.log(tag);
       var preSort = [];
       if (!tag || !tag[skill]) {
         return res.end();
@@ -169,21 +168,5 @@ controllerDirector.search = function (req, res) {
     })
   })
 }
-
-
-controllerDirector.raw = function (req, res) {
-  sequelize.query(`SELECT "users".*, "known"."id" AS "known.id", "known"."tagName" AS "known.tagName", "known"."createdAt" AS "known.createdAt", "known"."updatedAt" AS "known.updatedAt", "known.knowntags"."id" AS "known.knowntags.id", "known.knowntags"."createdAt" AS "known.knowntags.createdAt", "known.knowntags"."updatedAt" AS "known.knowntags.updatedAt", "known.knowntags"."tagId" AS "known.knowntags.tagId", "known.knowntags"."userId" AS "known.knowntags.userId", "want"."id" AS "want.id", "want"."tagName" AS "want.tagName", "want"."createdAt" AS "want.createdAt", "want"."updatedAt" AS "want.updatedAt", "want.wantedtags"."id" AS "want.wantedtags.id", "want.wantedtags"."createdAt" AS "want.wantedtags.createdAt", "want.wantedtags"."updatedAt" AS "want.wantedtags.updatedAt", "want.wantedtags"."tagId" AS "want.wantedtags.tagId", "want.wantedtags"."userId" AS "want.wantedtags.userId", "ownedproject"."id" AS "ownedproject.id", "ownedproject"."projectName" AS "ownedproject.projectName", "ownedproject"."githubLink" AS "ownedproject.githubLink", "ownedproject"."description" AS "ownedproject.description", "ownedproject"."tools" AS "ownedproject.tools", "ownedproject"."learned" AS "ownedproject.learned", "ownedproject"."createdAt" AS "ownedproject.createdAt", "ownedproject"."updatedAt" AS "ownedproject.updatedAt", "ownedproject.userprojects"."id" AS "ownedproject.userprojects.id", "ownedproject.userprojects"."createdAt" AS "ownedproject.userprojects.createdAt", "ownedproject.userprojects"."updatedAt" AS "ownedproject.userprojects.updatedAt", "ownedproject.userprojects"."projectId" AS "ownedproject.userprojects.projectId", "ownedproject.userprojects"."userId" AS "ownedproject.userprojects.userId" FROM (SELECT "users"."id", "users"."username", "users"."email", "users"."githubID", "users"."githubProfileURL", "users"."githubProfileImage", "users"."token", "users"."teacher", "users"."student", "users"."collaborator", "users"."createdAt", "users"."updatedAt" FROM "users" AS "users" WHERE "users"."githubID" = '13021947' LIMIT 1) AS "users" LEFT OUTER JOIN ("knowntags" AS "known.knowntags" INNER JOIN "tags" AS "known" ON "known"."id" = "known.knowntags"."tagId") ON "users"."id" = "known.knowntags"."userId" LEFT OUTER JOIN ("wantedtags" AS "want.wantedtags" INNER JOIN "tags" AS "want" ON "want"."id" = "want.wantedtags"."tagId") ON "users"."id" = "want.wantedtags"."userId" LEFT OUTER JOIN ("userprojects" AS "ownedproject.userprojects" INNER JOIN "projects" AS "ownedproject" ON "ownedproject"."id" = "ownedproject.userprojects"."projectId") ON "users"."id" = "ownedproject.userprojects"."userId";
-`, { type: sequelize.QueryTypes.SELECT}).then(function (profile) {
-  res.send(profile);
-  })
-}
-/*
-select *
-from users
-join knowntags
-on ( users.id = knowntags."userId")
-join tags
-on knowntags."tagId" = tags.id;
-*/
 
 module.exports = controllerDirector;

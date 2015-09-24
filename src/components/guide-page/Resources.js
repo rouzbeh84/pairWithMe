@@ -1,5 +1,6 @@
 var React = require('react');
 var Resources = React.createClass({
+	// links to resources we found helpful
 	render: function(){
 		return(
 			<div>

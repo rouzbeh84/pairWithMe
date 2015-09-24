@@ -13,7 +13,6 @@ var Projects = React.createClass({
 		 window.location.pathname = '/project/'+ this.props.route
 	},
 	render: function() {
-		console.log("props ~>", this.props.title);
 		return(
 			<div className={this.props.className}>
 				<div className="bordered">

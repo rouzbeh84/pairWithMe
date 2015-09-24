@@ -15,6 +15,7 @@ var Header = React.createClass({
 		});
 	},
 	render: function(){
+	// setting active allows us to change the active tage based on current page
 		var profile = <a href="/auth/github/" >Profile</a>;
 		var search = <a href="/auth/github/" >Search</a>;;
 		if(document.cookie){
@@ -24,7 +25,9 @@ var Header = React.createClass({
 		}
 		return (
 			<div className="header clearfix row header">
-				<h3 className="text-muted pull-left">Pair With Me</h3>
+				<h3>
+				<Link to="/" className="pull-left pair" onClick={this.active}>Pair With Me</Link>
+				</h3>
       <nav>
         <ul className="nav nav-pills pull-right">
 						<li role="presentation" className={this.state.active === '/' ? 'active' : ''}>
@@ -37,7 +40,7 @@ var Header = React.createClass({
 						{profile}
 						</li>
 						<li role="presentation" className={this.state.active === '/recentProjects' ? 'active' : ''}>
-							<Link to="recentprojects" onClick={this.active}>Recent Projects</Link>
+							<Link to="recentprojects" onClick={this.active}>Projects</Link>
 						</li>
 						<li role="presentation" className={this.state.active === '/search' ? 'active' : ''}>
 						{search}

@@ -28,6 +28,7 @@ var SearchForms = React.createClass({
     })
   },
   componentDidMount: function() {
+    // returns all the tags in databse for easy selection
     $.getJSON('/tags', function(result) {
       result = result.map(function (element, index) {
         return ({value: element.tagName, label: element.tagName})
@@ -36,6 +37,7 @@ var SearchForms = React.createClass({
     }.bind(this))
   },
   handle: function (e) {
+    // sets key values based on input for database
     e.preventDefault();
     var that = this;
     var sendObject = {};
@@ -49,12 +51,11 @@ var SearchForms = React.createClass({
 // error right now
       success: function(results) {
       	if(results.length === 0){
-      		that.setState({noResults:'Sorry No Results Found'});
+      		that.setState({noResults:'Sorry, No Partners Found :`('});
       		that.setState({data:[]});
       	} else {
       	that.setState({noResults:''});
         that.setState({data:results});
-        console.log(results);
         }
       },
 
@@ -109,7 +110,11 @@ var SearchForms = React.createClass({
 					<div className="row">
 						<div className="col-xs-12">
 		        <SearchResults data={this.state.data}/>
-		        {this.state.noResults}
+            <div className="text-center">
+              <p className="noresults">
+		            {this.state.noResults}
+              </p>
+            </div>
 		      </div>
 					</div>
 				</div>

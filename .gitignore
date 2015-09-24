@@ -41,3 +41,4 @@ config
 build
 client/lib
 client/css
+.env
