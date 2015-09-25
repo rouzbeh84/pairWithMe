@@ -8,7 +8,7 @@ var ProfileEditor = React.createClass({
 
 	render: function() {
 		return (
-			<div className="bordered">
+			<div className="bordered-box">
 			<h3 className="text-center">Profile Editor</h3>
 				<div>
 					<a href={this.props.picture}></a>
