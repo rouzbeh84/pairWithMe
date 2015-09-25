@@ -6,6 +6,22 @@ var Tag = require('./tagModel.js');
 
 var userController = {};
 
+userController.signIn = function(req,res) {
+  console.log('signing in');
+  User.findOrCreate({where: {username: req.user.username}, defaults: {
+    githubID: req.user.id, githubProfileURL: req.user.profileUrl,
+    githubProfileImage: req.user.profilePic, token: req.user.token, email: req.user.email}}).spread(function(user, created) {
+      res.cookie('githubID', user.githubID);
+      res.cookie('token', user.token);
+    if (created === true) {
+      res.redirect('/profileEditor');
+    }
+    else {
+      res.redirect('/profile');
+    }
+  })
+};
+
 userController.getProfile = function (req, res) {
   User.findOne({where: {githubID: req.cookies.githubID, token: req.cookies.token},
     include: [{model: Tag, as: 'known'}, {model: Tag, as: 'want'}, {model: Project, as: 'ownedproject'}]}).done(function (user) {

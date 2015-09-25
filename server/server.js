@@ -67,11 +67,8 @@ app.get('/', function(req, res) {
 app.get('/auth/github', passport.authenticate('github'), function(req,res) {
   //request will redirect to Githib for authentication
 });
-app.get('/auth/github/callback', passport.authenticate('github', {failureRedirect: 'login'}), function(req,res) {
-  res.cookie('githubID', req.user.id);
-  res.cookie('token', req.user.token);
-  res.redirect('/profile');
-});
+/** authenticates callback */
+app.get('/auth/github/callback', passport.authenticate('github', {failureRedirect: 'login'}), UserController.signIn);
 
 app.post('/updateProfile', UserController.updateProfile);
 
