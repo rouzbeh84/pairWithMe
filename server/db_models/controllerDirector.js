@@ -9,7 +9,6 @@ var controllerDirector = {};
 controllerDirector.search = function (req, res) {
   User.findOne({where: {githubID: req.cookies.githubID, token: req.cookies.token},
   include: [{model: Tag, as: 'known'}, {model: Tag, as: 'want'}]}).done(function (user) {
-    console.log(user);
     var whereQuery = {};
     var partner = req.body.partner.toLowerCase();
     var skill = 'want';
@@ -17,7 +16,6 @@ controllerDirector.search = function (req, res) {
       skill = 'known';
     }
     whereQuery[partner] = true;
-    console.log(whereQuery);
     Tag.findOne({where: {tagName: req.body.tag},
     include: [{model: User, as: skill, where: whereQuery, include: [{model: Tag, as: 'known'}, {model: Tag, as: 'want'}]}]}).done(function (tag) {
       var preSort = [];

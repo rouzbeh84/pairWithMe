@@ -33,7 +33,7 @@ var ProfileForm = React.createClass({
     this.setState({teacher:'true'});
   },
   onChangeCollaborator: function() {
-    this.setState({collaborater:'true'});
+    this.setState({collaborator:'true'});
   },
   onChangeStudent: function() {
     this.setState({student:'true'});
@@ -44,7 +44,7 @@ var ProfileForm = React.createClass({
   },
   onChangeWant: function(value) {
     var wantTags = value.replace(/ /g, '-')
-    this.valueHolder.want=want; 
+    this.valueHolder.want=wantTags; 
   },
 // onChange sets a value for send object
   componentDidMount: function() {
