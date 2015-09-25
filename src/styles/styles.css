@@ -1,6 +1,44 @@
 .row {
   padding: 10px 0;
 }
+.nav>li>a {
+  padding-top: 3px !important;
+  padding-bottom: 5px !important;
+}
+.nav>li>a.login-link:focus, .nav>li>a.login-link:hover {
+  background-color: transparent !important;
+  opacity: .88;
+}
+#main .nav-pills>li.active>a {
+  background-color: rgb(220,220,220);
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px rgba(20,20,20, 1);
+
+}
+#main .nav-pills>li.active>a {
+  background-color: #A2A1A1;
+  color: #FFFFFF;
+}
+.header{
+  /*background-color: #f0f03d;*/
+  text-shadow: 1px 1px 2px rgba(250, 250, 250, 1);
+  margin-bottom:30px;
+  padding: 10px 0;
+  border-radius: 5px;
+}
+.header li.logout-button a{
+  color: rgb(138,0,0) !important;
+}
+
+.header h3{
+  font-size: 24px;
+  margin-top: 2px;
+  padding-left: 10px;
+}
+.header a {
+  color: #797171;
+  font-size: 18px;
+}
 body{
   background: url(../img/shattered_@2X.png) top left;
   font-size: 1.5rem;
@@ -12,18 +50,7 @@ h4 {
   padding-left: 15px;
   font-size: 2.0rem;
 }
-.header{
-  /*background-color: #f0f03d;*/
-  text-shadow: 1px 1px 2px rgba(250, 250, 250, 1);
-  margin-bottom:30px;
-  padding: 10px 0;
-  border-radius: 5px;
-}
-.header h3{
-  font-size: 24px;
-  margin-top: 2px;
-  padding-left: 10px;
-}
+
 .login-button {
   margin-top: -3px;
   margin-left: -10px;
@@ -45,17 +72,8 @@ h4 {
   font-size: 32px;
   font-weight: 700;
     }
-.nav>li>a {
-  padding-top: 3px !important;
-  padding-bottom: 5px !important;
-}
-.nav>li>a.login-link:focus, .nav>li>a.login-link:hover {
-  background-color: transparent !important;
-  opacity: .88;
-}
-.header li.logout-button a{
-  color: rgb(138,0,0) !important;
-}
+
+
 .bordered-box-box {
   border: 1px solid #9A9696;
   border-radius: 5px;
@@ -147,23 +165,11 @@ h4 {
 .guide-block p, .guide-block ul li {
   padding: 5px;
 }
-.header a {
-  color: #797171;
-  font-size: 18px;
-}
+
 p {
   margin:10px 0;
 }
-#main .nav-pills>li.active>a {
-  background-color: rgb(220,220,220);
-  color: #FFFFFF;
-  text-shadow: 1px 1px 2px rgba(20,20,20, 1);
 
-}
-#main .nav-pills>li.active>a {
-  background-color: #A2A1A1;
-  color: #FFFFFF;
-}
 .user-type {
   font-size: 1.8rem;
 }
