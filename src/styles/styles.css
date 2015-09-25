@@ -20,6 +20,9 @@ p {
 button {
   outline: none;
 }
+button:hover {
+  opacity: .85;
+}
 
 /*bootstrap's row class gives some padding on top and bottom*/
 
