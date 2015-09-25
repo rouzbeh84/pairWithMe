@@ -5,20 +5,19 @@ var Resources = React.createClass({
 		return(
 			<div>
 				<h3>Resources for Pair Programming</h3>
-				<div className="bordered">
-					<div className='row'>
-						<a href="https://www.versionone.com/agile-101/agile-software-programming-best-practices/pair-programming/">What Pair Programming is</a>
+					<div className='links'>
+						<a href="https://www.versionone.com/agile-101/agile-software-programming-best-practices/pair-programming/">What Pair Programming is</a><hr/>
 					</div>
-					<div className='row'>
-						<a href="http://remotepairprogramming.com/">Remote Pairing guide</a>
+					<div className='links'>
+						<a href="http://remotepairprogramming.com/">Remote Pairing guide</a><hr/>
 					</div>
-					<div className='row'>
-						<a href="http://cafe.elharo.com/programming/why-pair-programming-works/">Why Pair Program</a>
+					<div className='links'>
+						<a href="http://cafe.elharo.com/programming/why-pair-programming-works/">Why Pair Program</a><hr/>
 					</div>
 				</div>
-			</div>
 			);
 	}
 
 });
 module.exports = Resources;
+

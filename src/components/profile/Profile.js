@@ -28,7 +28,7 @@ var Profile = React.createClass({
 				var teach = "Teacher";
 			}
 			if(data.collaborator) {
-				var collaborator = "Collaborator";
+				var collaborator = "Partner";
 			}
 			if(data.student) {
 				var learn = "Student"
