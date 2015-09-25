@@ -1,12 +1,14 @@
 # Guide Page
 
-To start using this site you need to have a GitHub account and you sign in through that. Once signed in it will create your profiles information based on your GitHub account and return you to your brand new profile page. Click the profile editor button to enter in if you want to be a student, teacher or collaborator. You also enter in what skills you have and want skill you are looking to learn on this page. Once you have your profile how you like it head on over to the search page to look for what you want skills you want to use on your next project and what kind of partner you are looking for. After hitting the search button we will find the very best matches for you to begin your programming journey!
+To start using this site you need to have a GitHub account to sign in. Once signed in it will create your profiles information based on your GitHub account and return you to your brand new profile page. Click the profile editor button to enter in if you want to be a student, partner or teacher. You should also enter in what skills you have and what skills you are looking to learn on this page.
+
+Once you have your profile how you like it head on over to the search page to look for what you want skills you want to use on your next project and what kind of partner you are looking for. After hitting the search button we will find the very best matches for you to begin your programming journey!
 
 ---
 
 ## **What is Pair Programming?**
 
-Pair Programming in its simple form is just two people working together on a project. We recommend when programming to follow the driver navigator method to be the most efficient. This essentially means one partner,driver, types while the other, navigator, researches problems and checks the drivers work.
+Pair Programming in its simplest form is just two people working together on a project. We recommend when programming to follow the driver/navigator method to be the most efficient. This essentially means one partner, the driver, types while the other, the navigator, researches problems and checks the drivers work.
 
 *   [Overview of what Pair Programming is](https://en.wikipedia.org/wiki/Pair_programming)
 *   [Quick guide on the rules of Pair Programming](http://www.extremeprogramming.org/rules/pair.html)
