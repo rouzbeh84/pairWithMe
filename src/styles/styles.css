@@ -56,7 +56,7 @@ h4 {
 .header li.logout-button a{
   color: rgb(138,0,0) !important;
 }
-.bordered {
+.bordered-box-box {
   border: 1px solid #9A9696;
   border-radius: 5px;
   padding: 15px;

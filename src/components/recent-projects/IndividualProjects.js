@@ -44,13 +44,13 @@ var IndividualProjects = React.createClass({
 				<div className="row">
 	 				<div className="form-group col-xs-12 col-sm-8">
 	 					<label>Title</label>
-						  <p className="bordered"> {this.state.name} </p>
+						  <p className="bordered-box"> {this.state.name} </p>
 	 				</div>
 	 			</div>
 				<div className="row">
 					<div className="form-group col-xs-12 col-sm-8">
 					  <label>GitHubLink</label>
-						  <div className="bordered">
+						  <div className="bordered-box">
 						    <a href={this.state.github}>Projects Github</a>
 						  </div>
 					</div>
@@ -58,25 +58,25 @@ var IndividualProjects = React.createClass({
 				<div className="row">
 					<div className="form-group col-xs-12 col-sm-8">
 					  <label>Description</label>
-					    <p className="bordered" row='3'>{this.state.description}</p>
+					    <p className="bordered-box" row='3'>{this.state.description}</p>
 					</div>
 				</div>
 				<div className="row">
 					<div className="form-group col-xs-12 col-sm-8">
 				    <label>Tools Used</label>
-		  	    <p className="bordered">{this.state.tools}</p>
+		  	    <p className="bordered-box">{this.state.tools}</p>
 					</div>
 				</div>
 				<div className="row">
 					 <div className="form-group col-xs-12 col-sm-8">
 					   <label>What we learned</label>
-					   <p className="bordered">{this.state.learn}</p>
+					   <p className="bordered-box">{this.state.learn}</p>
 					 </div>
 				</div>
 				<div className="row">
 					 <div className="form-group col-xs-12 col-sm-8">
 					   <label>Authors</label><br/>
-						   <div className="bordered">
+						   <div className="bordered-box">
 									<Link to={profile1}><strong>{this.state.partner1}{space}</strong></Link>
 									<Link to={profile2}><strong>{this.state.partner2}</strong></Link>
 								</div>
