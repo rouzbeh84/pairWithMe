@@ -61,9 +61,9 @@ var ProfileForm = React.createClass({
         e.preventDefault();
     var that = this;
     var sendObject = {};
-    sendObject.teacher = this.valueHolder.teacher;
-    sendObject.collaborator = this.valueHolder.collaborator;
-    sendObject.student = this.valueHolder.student;
+    sendObject.teacher = this.state.teacher;
+    sendObject.collaborator = this.state.collaborator;
+    sendObject.student = this.state.student;
     sendObject.have = this.valueHolder.have;
     sendObject.want = this.valueHolder.want;
     $.ajax({
