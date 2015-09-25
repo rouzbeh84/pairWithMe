@@ -45,8 +45,6 @@ sequelize.sync().then(function () {
 /* Seperated the server file into multiple files, inhering other files  */
 var UserController = require('./db_models/userController.js');
 var TagController = require('./db_models/tagController.js');
-var KnownTagController = require('./db_models/knownTagsController.js');
-var WantedTagController = require('./db_models/wantedTagsController.js');
 var ProjectController = require('./db_models/projectController.js');
 var ControllerDirector = require('./db_models/controllerDirector.js');
 
@@ -122,8 +120,6 @@ app.get('/recentProjects/:number', ProjectController.recentProjects);
 app.get('/tags', TagController.getAllTags);
 
 app.post('/tags', TagController.addTags);
-
-app.post('/knowntags', KnownTagController.addTags);
 
 app.post('/search', ControllerDirector.search);
 
