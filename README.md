@@ -42,7 +42,8 @@ All projects are a good project. Pick a project goal in scope for your skill lev
 
 *   [Great site to find project ideas](http://www.ideaswatch.com/startup-ideas/app)
 *   [List of projects to develop coding skills](http://www.linuxtrainingacademy.com/projects/)
-
+*   [Here is a great place to refine your coding skills in general to build great projects](http://coderbyte.com/)
+*   [Here is also another great place to build your coding skills](http://www.codewars.com/)
 
 ## Tools to Program in Pairs
 
