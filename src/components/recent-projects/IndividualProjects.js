@@ -77,7 +77,8 @@ var IndividualProjects = React.createClass({
 					 <div className="form-group col-xs-12 col-sm-8">
 					   <label>Authors</label><br/>
 						   <div className="bordered-box">
-									<Link to={profile1}><strong>{this.state.partner1}{space}</strong></Link>
+									<Link to={profile1}><strong>{this.state.partner1}</strong></Link>
+									{space}
 									<Link to={profile2}><strong>{this.state.partner2}</strong></Link>
 								</div>
 					 </div>

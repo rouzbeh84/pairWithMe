@@ -3,9 +3,12 @@ var Resources = React.createClass({
 	// links to resources we found helpful
 	render: function(){
 		return(
-			<div className="guide-block">
-				<h3>Tools to Program in Pairs</h3>
-						<ul>
+			<div>
+				<div className="guide-block">
+					<h3>
+						<strong>Tools to Program in Pairs</strong>
+					</h3>
+					<ul>
 						<li>
 						  <a href="http://tmux.github.io/">TMUX</a> Allows multiple users to connect to a single terminal session. Directions here for quick reference <a href="https://www.howtoforge.com/sharing-terminal-sessions-with-tmux-and-screen">tmux shared session</a> and in <a href="https://www.youtube.com/watch?v=wKEGA8oEWXw&feature=youtu.be">video here</a>
 						</li>
@@ -68,6 +71,7 @@ var Resources = React.createClass({
 						  <a href="https://atom.io/packages/atom-pair">atom-pair</a> An Atom Package that allows for epic pair programming. Powered by <a href="https://pusher.com/">Pusher</a> and maintained by <a href="https://github.com/jpatel531">Jamie Patel</a>
 						</li>
 					</ul>
+				</div>
 			</div>
 		);
 	}

@@ -21,12 +21,12 @@ var Header = React.createClass({
 		if(document.cookie){
 			search = <Link to="search" onClick={this.active}>Search</Link>;
 			profile = <Link to="profile" onClick={this.active}>Profile</Link>;
-						
+
 		}
 		return (
 			<div className="header clearfix row header">
 				<h3>
-				<Link to="/" className="pull-left pair" onClick={this.active}>Pair With Me</Link>
+					<Link to="/" className="pull-left pair" onClick={this.active}>Program in Pairs</Link>
 				</h3>
       <nav>
         <ul className="nav nav-pills pull-right">
