@@ -59,27 +59,6 @@ app.use(session({
 app.use(passport.initialize()); //middleware to start passport
 app.use(passport.session()); //used for persisten login
 
-/** middleware used to authenticate any route
-  * checks if a cookie exist, if so it will display continue
-  * onthe the next param when used. else it would redirect to the
-  * ouath/github route that will redirect to the github page */
-// var authenticate = function(req,res,next) {
-//   if(!req.cookies.token) {
-//     res.redirect('/auth/github')
-//   }
-//   else {next();}
-// }
-// function authenticatedOrNot(req, res, next){
-//   if(!req.isAuthenticated()){
-//     console.log('running an auth user');
-//     res.redirect('/auth/github');
-//   }else{
-//     console.log('not auth user, redirect');
-//    next(); //or /auth/github
-//   }
-// }
-
-
 /** loading home page */
 app.get('/', function(req, res) {
   res.sendFile(path.resolve(__dirname + '/../client/index.html'));
@@ -95,21 +74,18 @@ app.get('/auth/github/callback', passport.authenticate('github', {failureRedirec
   res.redirect('/profile');
 });
 
-app.post('/updateProfile', ControllerDirector.updateProfile);
-
-//app.get('/api/profile',authenticatedOrNot,ControllerDirector.getProfile);
+app.post('/updateProfile', UserController.updateProfile);
 
 app.get('/api/users', UserController.allUsers);
 
-app.get('/api/profile', ControllerDirector.getProfile);
+app.get('/api/profile', UserController.getProfile);
 
-/* this route is authenticated, user must have cookie before diplaying profile*/
 app.get('/api/profile/:name', UserController.profileByName);
 
-app.post('/createProject', ControllerDirector.createProject);
+app.post('/createProject', ProjectController.createProject);
 
-app.get('/api/projects', ControllerDirector.getProjects);
-app.get('/api/projects/:pageNumber', ControllerDirector.getProjects);
+app.get('/api/projects', ProjectController.getProjects);
+app.get('/api/projects/:pageNumber', ProjectController.getProjects);
 
 app.post('/updateProject', ProjectController.updateProject);
 
