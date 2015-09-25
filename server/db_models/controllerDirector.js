@@ -2,8 +2,6 @@ var Tag = require('./tagModel.js');
 var KnownTag = require('./knownTagsModel.js');
 var TagController = require('./tagController.js');
 var UserController = require('./userController.js');
-var KnownTagsController = require('./knownTagsController.js');
-var WantedTagsController = require('./wantedTagsController.js');
 var Project = require('./projectModel.js');
 
 var controllerDirector = {};
@@ -61,8 +59,8 @@ controllerDirector.updateProfile = function (req, res) {
 };
 
 controllerDirector.getProfile = function (req, res) {
-  User.findOne({where: {githubID: req.cookies.githubID},
-    include: [{model: Tag, as: 'known'}, {model: Tag, as: 'want'}, {model: Project, as: 'ownedproject', raw: 'ORDER BY ownedproject.id'}]}).done(function (user) {
+  User.findOne({where: {githubID: req.cookies.githubID, token: req.cookies.token},
+    include: [{model: Tag, as: 'known'}, {model: Tag, as: 'want'}, {model: Project, as: 'ownedproject'}]}).done(function (user) {
     res.send(user);
   })
 };
@@ -105,6 +103,7 @@ controllerDirector.getProjects = function (req, res) {
 controllerDirector.search = function (req, res) {
   User.findOne({where: {githubID: req.cookies.githubID, token: req.cookies.token},
   include: [{model: Tag, as: 'known'}, {model: Tag, as: 'want'}]}).done(function (user) {
+    console.log(user);
     var whereQuery = {};
     var partner = req.body.partner.toLowerCase();
     var skill = 'want';
@@ -112,6 +111,7 @@ controllerDirector.search = function (req, res) {
       skill = 'known';
     }
     whereQuery[partner] = true;
+    console.log(whereQuery);
     Tag.findOne({where: {tagName: req.body.tag},
     include: [{model: User, as: skill, where: whereQuery, include: [{model: Tag, as: 'known'}, {model: Tag, as: 'want'}]}]}).done(function (tag) {
       var preSort = [];
@@ -161,14 +161,5 @@ controllerDirector.search = function (req, res) {
     })
   })
 }
-
-/*
-select *
-from users
-join knowntags
-on ( users.id = knowntags."userId")
-join tags
-on knowntags."tagId" = tags.id;
-*/
 
 module.exports = controllerDirector;
