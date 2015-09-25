@@ -49,6 +49,9 @@ var Questions = React.createClass({
 					<p>
 						Anytime you are willing to share and use different views on a project. There are few instances in which pair programming will not be the most fun and efficient, way to program.
 					</p>
+					<ul>
+					<li><a href="http://www.boost.co.nz/blog/2011/11/pair-programming-when-and-why/">Blog about when to pair program</a></li>
+					</ul>
 				</div>
 				<div className="guide-block">
 					<h4><strong>What Technologies to Use?</strong></h4>
@@ -57,6 +60,7 @@ var Questions = React.createClass({
 						</p>
 						<ul>
 						<li><a href="http://blog.stevenhaddox.com/2012/04/11/remote-pairing-with-ssh-tmux-vim/">Blog on using ssh, tmux, and vim</a></li>
+						<li><a href="https://guides.github.com/activities/hello-world/">GitHub is a great form of version control and sharing of projects</a></li>
 						</ul>
 				</div>
 				<div className="guide-block">
@@ -79,6 +83,7 @@ var Questions = React.createClass({
 					</p>
 					<ul>
 						<li><a href='http://www.ideaswatch.com/startup-ideas/app'>Great site to find project ideas</a></li>
+						<li><a href='http://www.linuxtrainingacademy.com/projects/'>List of projects to develop coding skills</a></li>
 					</ul>
 				</div>
 			</div>
