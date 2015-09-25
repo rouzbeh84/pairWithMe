@@ -3,11 +3,14 @@
 body {
   font-size: 1.5rem;
   border-top: 2px solid #03509D;
-  padding-bottom: 40px;
   background: url(../img/shattered_@2X.png) top left;
   -webkit-box-shadow: inset 0px 1px 10px 0px rgba(153, 153, 153, .7);
   -moz-box-shadow: inset 0px 1px 10px 0px rgba(153, 153, 153, .7);
   box-shadow: inset 0px 1px 10px 0px rgba(153, 153, 153, .7);
+}
+.container {
+  padding-bottom: 40px;
+  background-color: #ddd;
 }
 h4 {
   font-size: 16px;
