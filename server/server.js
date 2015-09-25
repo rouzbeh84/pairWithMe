@@ -95,8 +95,6 @@ app.get('/auth/github/callback', passport.authenticate('github', {failureRedirec
   res.redirect('/profile');
 });
 
-app.get('/test', ControllerDirector.cookie);
-
 app.post('/updateProfile', ControllerDirector.updateProfile);
 
 //app.get('/api/profile',authenticatedOrNot,ControllerDirector.getProfile);

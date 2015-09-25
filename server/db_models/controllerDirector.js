@@ -2,8 +2,6 @@ var Tag = require('./tagModel.js');
 var KnownTag = require('./knownTagsModel.js');
 var TagController = require('./tagController.js');
 var UserController = require('./userController.js');
-var KnownTagsController = require('./knownTagsController.js');
-var WantedTagsController = require('./wantedTagsController.js');
 var Project = require('./projectModel.js');
 
 var controllerDirector = {};
@@ -60,14 +58,8 @@ controllerDirector.updateProfile = function (req, res) {
   })
 };
 
-controllerDirector.cookie = function (req, res) {
-  res.cookie('githubID', '13021947');
-  res.cookie('token', '74d41c1ef444511a96d8454fcc79ff3090cd7f8f');
-  res.redirect('/profile');
-}
-
 controllerDirector.getProfile = function (req, res) {
-  User.findOne({where: {githubID: req.cookies.githubID},
+  User.findOne({where: {githubID: req.cookies.githubID, token: req.cookies.token},
     include: [{model: Tag, as: 'known'}, {model: Tag, as: 'want'}, {model: Project, as: 'ownedproject'}]}).done(function (user) {
     res.send(user);
   })
@@ -111,6 +103,7 @@ controllerDirector.getProjects = function (req, res) {
 controllerDirector.search = function (req, res) {
   User.findOne({where: {githubID: req.cookies.githubID, token: req.cookies.token},
   include: [{model: Tag, as: 'known'}, {model: Tag, as: 'want'}]}).done(function (user) {
+    console.log(user);
     var whereQuery = {};
     var partner = req.body.partner.toLowerCase();
     var skill = 'want';
