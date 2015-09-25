@@ -20,14 +20,14 @@ Pair Programming allows you to have two minds working on the same problem making
 *   [Article on the benefits of Pair Programming](http://cafe.elharo.com/programming/why-pair-programming-works/)
 *   [Blog on why Pair Programming works](https://blog.inf.ed.ac.uk/sapm/2014/02/17/why-pair-programming/)
 
-### **How to Pair Program?**
+## **How to Pair Program?**
 
 To pair program take shifts revolving every 15 to 30 minutes or every other challenge. As one partner takes on the role of driver and actually types out the code. The other partner assumes the role of navigator and they are in charge of research and pseudo coding the driver through blocks. As the driver types the navigator should watch for errors and problems with the logic. At all times both partners should be able to articulate there logic and thoughts.
 
 *   [Shows the steps to Pair Programming](http://www.wikihow.com/Pair-Program)
 *   [Simple explanation of how to Pair Program](http://anh.cs.luc.edu/170/Kindergarten.html)
 
-### **How to Remote Pair Program?**
+## **How to Remote Pair Program?**
 
 Remote pair programming can be as simple and efficient as it is in person programming. We recommend using a text editor in which you can share a workspace and some form of video chatting. Other than that, you basically do the same thing as you would in person with a little bit more articulation of your thoughts since you can not read body language as well.
 
@@ -36,7 +36,7 @@ Remote pair programming can be as simple and efficient as it is in person progra
 *   [Great guide to what you need to remote program](http://evan.tiggerpalace.com/articles/2011/10/17/some-people-call-me-the-remote-pairing-guy-/)
 *   [Info on some of the best remote programming practices](https://github.com/livingsocial/ls-pair)
 
-### **What is A Good Project?**
+## **What is A Good Project?**
 
 All projects are a good project. Pick a project goal in scope for your skill level and just have fun with it. Just because your project is not ground breaking or has been done before does not mean your project is not good! [www.ideaswatch.com](http://www.ideaswatch.com/startup-ideas/app) is a great site to find project ideas as well.
 
@@ -44,7 +44,7 @@ All projects are a good project. Pick a project goal in scope for your skill lev
 *   [List of projects to develop coding skills](http://www.linuxtrainingacademy.com/projects/)
 
 
-### Tools to Program in Pairs
+## Tools to Program in Pairs
 
 *   [TMUX](http://tmux.github.io/) Allows multiple users to connect to a single terminal session. Directions here for quick reference [tmux shared session](https://www.howtoforge.com/sharing-terminal-sessions-with-tmux-and-screen) and in [video here](https://www.youtube.com/watch?v=wKEGA8oEWXw&feature=youtu.be)
 *   [Wemux](https://github.com/zolrath/wemux) A simple script that makes shared tmux sessions more easily manageable. A great write up on how to here [Simple Remote Pairing with wemux](http://spin.atomicobject.com/2012/04/04/simple-remote-pairing-with-wemux/) by [Mike English](http://spin.atomicobject.com/author/english/).
