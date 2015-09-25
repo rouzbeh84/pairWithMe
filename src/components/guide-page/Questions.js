@@ -8,7 +8,7 @@ var Questions = React.createClass({
 			  <div className="guide-block">
 					<h3><strong>What is Pair Programming?</strong></h3>
 					<p>
-							Pair Programming in its simple form is just two people working together on a project. We recommend when programming to follow the driver navigator method to be the most efficient. This essentially means one partner,driver, types while the other, navigator, researches problems and checks the drivers work.
+							Pair Programming in its simplest form is just two people working together on a project. We recommend when programming to follow the driver/navigator method to be the most efficient. This essentially means one partner, the driver, types while the other, the navigator, researches problems and checks the drivers work.
 					</p>
 					<ul>
 						<li><a href="https://en.wikipedia.org/wiki/Pair_programming">Overview of what Pair Programming is</a></li>
@@ -20,7 +20,7 @@ var Questions = React.createClass({
 				<div className="guide-block">
 					<h3><strong>Why Pair Program?</strong></h3>
 					<p>
-						Pair Programming allows you to have two minds working on the same problem making it much easier and faster to solve. It also forces you to express your logic in an efficient manner. Pair programming forces you to write better code faster.
+						Pair Programming allows you to have two minds working on the same problem making it much easier to solve. It also encourages you to express your logic in an efficient heuristic manner. Pair programming helps you write better code and understand what you've made much better.
 					</p>
 					<ul>
 						<li><a href='http://cafe.elharo.com/programming/why-pair-programming-works/'>Article on the benifits of Pair Programming</a></li>
@@ -30,7 +30,7 @@ var Questions = React.createClass({
 				<div className="guide-block">
 					<h3><strong>How to Pair Program?</strong></h3>
 					<p>
-						To pair program take shifts revolving every 15 to 30 minutes or every other challenge. As one partner takes on the role of driver and actually types out the code. The other partner assumes the role of navigator and they are in charge of research and helping the driver through blocks. As the driver types the navigator should watch for errors and problems with the logic. At all times both partners should be able to articulate there logic and thoughts.
+						To pair program take shifts revolving every 15 to 30 minutes or every other challenge. As one partner takes on the role of driver and actually types out the code. The other partner assumes the role of navigator and they are in charge of research and pseudo coding the driver through blocks. As the driver types the navigator should watch for errors and problems with the logic. At all times both partners should be able to articulate there logic and thoughts.
 					</p>
 					<ul>
 						<li><a href='http://www.wikihow.com/Pair-Program'>Shows the steps to Pair Programming</a></li>
@@ -41,7 +41,7 @@ var Questions = React.createClass({
 
 					<h3><strong>How to Remote Pair Program?</strong></h3>
 					<p>
-						Remote pair programming can be simple and just as efficient as in person programming. We recommend using a text editor in which you can share a workspace and some form of video chatting. Other than that you basically do the same thing as you would in person with a little bit more articulation of your thoughts since you can not read body language as well.
+						Remote pair programming can be as simple and efficient as it is in person programming. We recommend using a text editor in which you can share a workspace and some form of video chatting. Other than that, you basically do the same thing as you would in person with a little bit more articulation of your thoughts since you can not read body language as well.
 					</p>
 					<ul>
 						<li><a href="http://remotepairprogramming.com/">A great blog on how to pair program remotley</a></li>
