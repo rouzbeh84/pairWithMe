@@ -43,7 +43,7 @@ var Resources = React.createClass({
 						  <a href="https://github.com/rondale-sc/remote_pair_chef">Remote Pair Chef</a> Quickly build customized EC2 instances bootstrapped with RVM, TMUX, Vim and pre-built users in a single command by <a href="https://github.com/rondale-sc">Jonathan Jackson</a>.
 						</li>
 						<li>
-						  <a href="https://c9.io">Cloud9</a> is an online ide that allows "developers around the world to edit the same code and chat together in real-time". You can sign in with your github account and clone repos straight into it. Cloud9 also has a great post about Pair Programming <a href="https://c9.io/blog/a-look-into-the-future/">and how it's the future</a>.
+						  <a href="https://c9.io">Cloud9</a> is an online ide that allows "developers around the world to edit the same code and chat together in real-time". You can sign in with your github account and clone repos straight into it. Cloud9 also has a great post about Pair Programming <a href="https://c9.io/blog/a-look-into-the-future/">and how it is the future</a>.
 						</li>
 						<li>
 						  <a href="http://madeye.io">MadEye</a> MadEye is a collaborative web editor backed by your filesystem. Easy to use, designed for collaboration and built with the ACE editor. See it in action <a href="https://www.youtube.com/watch?v=MxBnPNgh8LA">here</a>.

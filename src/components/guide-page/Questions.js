@@ -59,6 +59,8 @@ var Questions = React.createClass({
 					<ul>
 						<li><a href='http://www.ideaswatch.com/startup-ideas/app'>Great site to find project ideas</a></li>
 						<li><a href='http://www.linuxtrainingacademy.com/projects/'>List of projects to develop coding skills</a></li>
+						<li><a href='http://coderbyte.com/'>Here is a great place to refine your coding skills in general to build great projects</a></li>
+						<li><a href='http://www.codewars.com/'>Here is also another great place to build your coding skills</a></li>
 					</ul>
 				</div>
 			</div>
