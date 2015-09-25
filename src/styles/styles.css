@@ -136,10 +136,17 @@ h4 {
   border-radius: 5px;
   background: rgba(222,222,222,0.2);
 }
-.guide-block h4, .guide-block p {
+.guide-block h3 {
+  padding-top: 10px;
+  font-size: 1.8rem;
+}
+.guide-block ul {
+  list-style: none;
+  padding-left: 0;
+}
+.guide-block p, .guide-block ul li {
   padding: 5px;
 }
-
 .header a {
   color: #797171;
   font-size: 18px;
