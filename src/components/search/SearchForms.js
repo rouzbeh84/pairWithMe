@@ -68,7 +68,7 @@ var SearchForms = React.createClass({
     return(
 			<div className="row">
 				<div className="col-xs-12">
-	      <div className="col-xs-10 col-xs-offset-1 bordered">
+	      <div className="col-xs-10 col-xs-offset-1 bordered-box">
 	      <h3 className="text-center">Search For Partners</h3>
 					<div className="row">
 						<div className="col-xs-8 col-xs-offset-2">

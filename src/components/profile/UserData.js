@@ -25,10 +25,10 @@ var UserData = React.createClass({
 								<strong>{this.props.student}</strong>
 							</div>
 						</div>
-						<div className="col-xs-10 col-xs-offset-1 bordered">
+						<div className="col-xs-10 col-xs-offset-1 bordered-box">
 							<strong>Skills Have: </strong>{this.props.knownTags}
 						</div>
-						<div className="col-xs-10 col-xs-offset-1 bordered">
+						<div className="col-xs-10 col-xs-offset-1 bordered-box">
 							<strong>Skills Wanted: </strong>{this.props.wantTags}
 						</div>
 					</div>

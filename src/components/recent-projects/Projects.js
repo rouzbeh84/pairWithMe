@@ -15,7 +15,7 @@ var Projects = React.createClass({
 	render: function() {
 		return(
 			<div className={this.props.className}>
-				<div className="bordered">
+				<div className="bordered-box">
 				<p className="projects-text"><strong>Title: </strong>{this.props.title}</p>
 				<p className="projects-text"><strong>Description: </strong>{this.props.description}</p>
 				<p className="projects-text"><strong>Tools Used: </strong> {this.props.tools}</p>
