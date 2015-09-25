@@ -1,14 +1,13 @@
+/*bootstrap's row class gives some padding on top and bottom*/
 .row {
   padding: 10px 0;
 }
+/*Tabs for all of out pages and Title*/
 .nav>li>a {
   padding-top: 3px !important;
   padding-bottom: 5px !important;
 }
-.nav>li>a.login-link:focus, .nav>li>a.login-link:hover {
-  background-color: transparent !important;
-  opacity: .88;
-}
+
 #main .nav-pills>li.active>a {
   background-color: rgb(220,220,220);
   color: #FFFFFF;
@@ -26,10 +25,22 @@
   padding: 10px 0;
   border-radius: 5px;
 }
+/*classes for github login button and logout button*/
+.nav>li>a.login-link:focus, .nav>li>a.login-link:hover {
+  background-color: transparent !important;
+  opacity: .88;
+}
 .header li.logout-button a{
   color: rgb(138,0,0) !important;
 }
-
+.login-button {
+  margin-top: -3px;
+  margin-left: -10px;
+  width: 160px;
+  border: 1px solid #9A9696;
+  border-radius: 5px;
+}
+/*sets the header font size and styles*/
 .header h3{
   font-size: 24px;
   margin-top: 2px;
@@ -39,6 +50,20 @@
   color: #797171;
   font-size: 18px;
 }
+.header a.pair{
+  padding-top: 5px;
+  padding-bottom: 10px;
+  font-size: 32px;
+  font-weight: 700;
+    }
+/*header row adds a line under headers*/
+hr {
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: 0px 1px 1px rgba(0,0,0, 0.2);
+  -moz-box-shadow: 0px 1px 1px rgba(0,0,0, 0.2);
+  box-shadow: 0px 1px 1px rgba(0,0,0, 0.2);
+}
+/*Global fonts sized and styles*/
 body{
   background: url(../img/shattered_@2X.png) top left;
   font-size: 1.5rem;
@@ -46,35 +71,11 @@ body{
 h4 {
   font-size: 16px;
 }
-.links{
-  padding-left: 15px;
-  font-size: 2.0rem;
+p {
+  margin:10px 0;
 }
-
-.login-button {
-  margin-top: -3px;
-  margin-left: -10px;
-  width: 160px;
-  border: 1px solid #9A9696;
-  border-radius: 5px;
-}
-.homehero{
-  font-size: 2.0rem;
-  margin: 10px 10px;
-}
-.noresults{
-  font-size: 20px;
-  color: #FF4931;
-}
-.header a.pair{
-  padding-top: 5px;
-  padding-bottom: 10px;
-  font-size: 32px;
-  font-weight: 700;
-    }
-
-
-.bordered-box-box {
+/*bordered class we used for all of our borders*/
+.bordered-box{
   border: 1px solid #9A9696;
   border-radius: 5px;
   padding: 15px;
@@ -85,11 +86,47 @@ h4 {
   -moz-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.35);
   box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.35);
 }
+/*sets font size for our home hero text*/
+.homehero{
+  font-size: 2.0rem;
+  margin: 10px 10px;
+}
+/*adds a shadow to our home hero image*/
 .img-shadow {
   -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.65);
   -moz-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.65);
   box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.65);
 }
+/*Adds a background to our guide page blocks of text*/
+.guide-block {
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background: rgba(222,222,222,0.2);
+}
+/*Assigns font size and styles to our guide block text*/
+.guide-block h3 {
+  padding-top: 10px;
+  font-size: 1.8rem;
+}
+.guide-block ul {
+  list-style: none;
+  padding-left: 0;
+}
+.guide-block p, .guide-block ul li {
+  padding: 5px;
+}
+/*style for our links on the guide page*/
+.links{
+  padding-left: 15px;
+  font-size: 2.0rem;
+}
+/*style for profile pictures retrieved from github*/
+.profile-pic {
+  width: auto;
+  height: 140px;
+  margin: 0 auto;
+}
+/*style for our profile editor button on profile page*/
 .edit-profile-btn {
 	width:200px;
 	margin:0 auto;
@@ -117,6 +154,18 @@ h4 {
   background: #c4c4c4;
   text-decoration: none;
 }
+
+/*style for text on tags returned on profile pages*/
+.tags {
+  color: #03509D;
+  margin-left: 5px;
+  font-weight: light;
+  font-style: italic;
+  text-shadow: .5px .5px 1px rgba(255,255,255, .3);
+  font-size: 1.6rem;
+  display: inline-block;
+}
+/*style for projects button on all projects*/
 .project-page-btn {
   width:130px;
   margin:0 auto;
@@ -139,49 +188,11 @@ h4 {
   padding: 5px 20px;
   text-decoration: none;
 }
-
 .edit-profile-btn:hover {
   background: #c4c4c4;
   text-decoration: none;
 }
-.profile-pic {
-  width: auto;
-  height: 140px;
-  margin: 0 auto;
-}
-.guide-block {
-  margin-bottom: 20px;
-  border-radius: 5px;
-  background: rgba(222,222,222,0.2);
-}
-.guide-block h3 {
-  padding-top: 10px;
-  font-size: 1.8rem;
-}
-.guide-block ul {
-  list-style: none;
-  padding-left: 0;
-}
-.guide-block p, .guide-block ul li {
-  padding: 5px;
-}
-
-p {
-  margin:10px 0;
-}
-
-.user-type {
-  font-size: 1.8rem;
-}
-.tags {
-  color: #03509D;
-  margin-left: 5px;
-  font-weight: light;
-  font-style: italic;
-  text-shadow: .5px .5px 1px rgba(255,255,255, .3);
-  font-size: 1.6rem;
-  display: inline-block;
-}
+/*adds padding to our projects and text of project pagepage*/
 .projects-box {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -189,9 +200,15 @@ p {
 .projects-text {
   padding-bottom: 10px;
 }
-hr {
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  -webkit-box-shadow: 0px 1px 1px rgba(0,0,0, 0.2);
-  -moz-box-shadow: 0px 1px 1px rgba(0,0,0, 0.2);
-  box-shadow: 0px 1px 1px rgba(0,0,0, 0.2);
+/*Text displays when search results comees up empty*/
+.noresults{
+  font-size: 20px;
+  color: #FF4931;
 }
+/*text on the type of partner users are*/
+.user-type {
+  font-size: 1.8rem;
+}
+
+
+

@@ -66,7 +66,6 @@ var ProfileForm = React.createClass({
     sendObject.student = this.valueHolder.student;
     sendObject.have = this.valueHolder.have;
     sendObject.want = this.valueHolder.want;
-    console.log(sendObject);
     $.ajax({
       url: '/updateProfile',
       contentType: 'application/json',
