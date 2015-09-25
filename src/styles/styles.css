@@ -9,8 +9,7 @@ body {
   box-shadow: inset 0px 1px 10px 0px rgba(153, 153, 153, .7);
 }
 .container {
-  padding-bottom: 40px;
-  background-color: #ddd;
+  padding-bottom: 60px;
 }
 h4 {
   font-size: 16px;
