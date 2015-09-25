@@ -38,6 +38,7 @@ var Questions = React.createClass({
 					</ul>
 				</div>
 				<div className="guide-block">
+
 					<h3><strong>How to Remote Pair Program?</strong></h3>
 					<p>
 						Remote pair programming can be simple and just as efficient as in person programming. We recommend using a text editor in which you can share a workspace and some form of video chatting. Other than that you basically do the same thing as you would in person with a little bit more articulation of your thoughts since you can not read body language as well.
@@ -55,6 +56,10 @@ var Questions = React.createClass({
 					<p>
 						All projects are a good project. Pick a project goal in scope for your skill level and just have fun with it. Just because your project is not ground breaking or has been done before does not mean your project is not good! <a href='http://www.ideaswatch.com/startup-ideas/app'>www.ideaswatch.com</a> is a great site to find project ideas as well.
 					</p>
+					<ul>
+						<li><a href='http://www.ideaswatch.com/startup-ideas/app'>Great site to find project ideas</a></li>
+						<li><a href='http://www.linuxtrainingacademy.com/projects/'>List of projects to develop coding skills</a></li>
+					</ul>
 				</div>
 			</div>
 		);
