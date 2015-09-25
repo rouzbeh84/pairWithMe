@@ -23,7 +23,6 @@ var IndividualProjects = React.createClass({
 		// sets value to info in database
 		var params = this.context.router.getCurrentParams();
 		$.getJSON('/recentProjects/' + params.id  , function(data){
-			console.log(data);
 			if (!data.projectowner[1]) {
 				var partner2 = ' ';
 			}
