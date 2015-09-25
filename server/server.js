@@ -45,8 +45,6 @@ sequelize.sync().then(function () {
 /* Seperated the server file into multiple files, inhering other files  */
 var UserController = require('./db_models/userController.js');
 var TagController = require('./db_models/tagController.js');
-var KnownTagController = require('./db_models/knownTagsController.js');
-var WantedTagController = require('./db_models/wantedTagsController.js');
 var ProjectController = require('./db_models/projectController.js');
 var ControllerDirector = require('./db_models/controllerDirector.js');
 
@@ -97,8 +95,6 @@ app.get('/auth/github/callback', passport.authenticate('github', {failureRedirec
   res.redirect('/profile');
 });
 
-app.get('/test', ControllerDirector.getProfile);
-
 app.post('/updateProfile', ControllerDirector.updateProfile);
 
 //app.get('/api/profile',authenticatedOrNot,ControllerDirector.getProfile);
@@ -123,8 +119,6 @@ app.get('/tags', TagController.getAllTags);
 
 app.post('/tags', TagController.addTags);
 
-app.post('/knowntags', KnownTagController.addTags);
-
 app.post('/search', ControllerDirector.search);
 
 app.get('/logout', function (req, res) {
@@ -133,8 +127,6 @@ app.get('/logout', function (req, res) {
   req.logout();
   res.redirect('/');
 })
-
-
 
 /* This is our initial get request for our html and allows us to remove the #
  It along with our work on the client side allows us to not reload the whole
