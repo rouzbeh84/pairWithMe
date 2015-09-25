@@ -2,7 +2,7 @@
 
 To start using this site you need to have a GitHub account to sign in. Once signed in it will create your profiles information based on your GitHub account and return you to your brand new profile page. Click the profile editor button to enter in if you want to be a student, partner or teacher. You should also enter in what skills you have and what skills you are looking to learn on this page.
 
-Once you have your profile how you like it head on over to the search page to look for what you want skills you want to use on your next project and what kind of partner you are looking for. After hitting the search button we will find the very best matches for you to begin your programming journey!
+Once you have your profile how you like it, head on over to the search page to look for what you want to use on your next project and what kind of partner you are looking for. After hitting the search button we will find the very best matches for you to begin your pair programming journey!
 
 ---
 
@@ -13,11 +13,11 @@ Pair Programming in its simplest form is just two people working together on a p
 *   [Overview of what Pair Programming is](https://en.wikipedia.org/wiki/Pair_programming)
 *   [Quick guide on the rules of Pair Programming](http://www.extremeprogramming.org/rules/pair.html)
 
-### **Why Pair Program?**
+## **Why Pair Program?**
 
-Pair Programming allows you to have two minds working on the same problem making it much easier and faster to solve. It also forces you to express your logic in an efficient manner. Pair programming forces you to write better code faster.
+Pair Programming allows you to have two minds working on the same problem making it much easier to solve. It also encourages you to express your logic in an efficient heuristic manner. Pair programming helps you write better code and understand what you've made much etter.
 
-*   [Article on the benifits of Pair Programming](http://cafe.elharo.com/programming/why-pair-programming-works/)
+*   [Article on the benefits of Pair Programming](http://cafe.elharo.com/programming/why-pair-programming-works/)
 *   [Blog on why Pair Programming works](https://blog.inf.ed.ac.uk/sapm/2014/02/17/why-pair-programming/)
 
 ### **How to Pair Program?**
