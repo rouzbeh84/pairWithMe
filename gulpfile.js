@@ -65,5 +65,5 @@ gulp.task('css', function () {
 gulp.task('css:watch', function () {
   gulp.watch('./src/styles/*.css', ['css']);
 });
-
+// call all tasks and start server on port 3000
 gulp.task('default', ['js', 'css', 'css:watch', 'server']);
