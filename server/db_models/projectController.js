@@ -15,9 +15,11 @@ ProjectController.createProject = function(req, res) {
         User.findOne({where: {username: req.body.partner}}).done(function(user2) {
           user1.addOwnedproject(project).done(function () {
             project.addProjectowner(user1).then(function () {
-              user2.addOwnedproject(project).then(function () {
-                project.addProjectowner(user2);
-              })
+              if (user2) {
+                user2.addOwnedproject(project).then(function () {
+                  project.addProjectowner(user2);
+                })
+              }
             })
           })
         })

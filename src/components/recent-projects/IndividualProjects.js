@@ -23,6 +23,12 @@ var IndividualProjects = React.createClass({
 		// sets value to info in database
 		var params = this.context.router.getCurrentParams();
 		$.getJSON('/recentProjects/' + params.id  , function(data){
+			if (!data.projectowner[1]) {
+				var partner2 = ' ';
+			}
+			else {
+				partner2 = data.projectowner[1].username;
+			}
 			this.setState({
 				name: data.projectName,
 				github: data.githubLink,
@@ -30,7 +36,7 @@ var IndividualProjects = React.createClass({
 				tools: data.tools,
 				learn: data.learned,
 				partner1: data.projectowner[0].username,
-				partner2: data.projectowner[1].username
+				partner2: partner2
 			});
 		}.bind(this));
 	},
