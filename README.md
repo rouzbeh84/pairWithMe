@@ -66,7 +66,3 @@ All projects are a good project. Pick a project goal in scope for your skill lev
 *   [TeamViewer](http://www.teamviewer.com/) screen-sharing app for Mac/Windows/Linux, allows remote control and you can change color/quality settings to improve latency. Free for personal use.
 *   [JSFiddle.net](http://jsfiddle.net/) is a great testing ground for almost anything and integrates almost all libraries and frameworks for Javascript including jQuery, YUI, MooTools, Zepto etc…
 *   [atom-pair](https://atom.io/packages/atom-pair) An Atom Package that allows for epic pair programming. Powered by [Pusher](https://pusher.com/) and maintained by [Jamie Patel](https://github.com/jpatel531)
-
-</div>
-
-</div>
