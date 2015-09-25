@@ -15,30 +15,30 @@ Pair Programming in its simplest form is just two people working together on a p
 
 ## **Why Pair Program?**
 
-Pair Programming allows you to have two minds working on the same problem making it much easier to solve. It also encourages you to express your logic in an efficient heuristic manner. Pair programming helps you write better code and understand what you've made much etter.
+Pair Programming allows you to have two minds working on the same problem making it much easier to solve. It also encourages you to express your logic in an efficient heuristic manner. Pair programming helps you write better code and understand what you've made much better.
 
 *   [Article on the benefits of Pair Programming](http://cafe.elharo.com/programming/why-pair-programming-works/)
 *   [Blog on why Pair Programming works](https://blog.inf.ed.ac.uk/sapm/2014/02/17/why-pair-programming/)
 
 ### **How to Pair Program?**
 
-To pair program take shifts revolving every 15 to 30 minutes or every other challenge. As one partner takes on the role of driver and actually types out the code. The other partner assumes the role of navigator and they are in charge of research and helping the driver through blocks. As the driver types the navigator should watch for errors and problems with the logic. At all times both partners should be able to articulate there logic and thoughts.
+To pair program take shifts revolving every 15 to 30 minutes or every other challenge. As one partner takes on the role of driver and actually types out the code. The other partner assumes the role of navigator and they are in charge of research and pseudo coding the driver through blocks. As the driver types the navigator should watch for errors and problems with the logic. At all times both partners should be able to articulate there logic and thoughts.
 
 *   [Shows the steps to Pair Programming](http://www.wikihow.com/Pair-Program)
 *   [Simple explanation of how to Pair Program](http://anh.cs.luc.edu/170/Kindergarten.html)
 
 ### **How to Remote Pair Program?**
 
-Remote pair programming can be simple and just as efficient as in person programming. We recommend using a text editor in which you can share a workspace and some form of video chatting. Other than that you basically do the same thing as you would in person with a little bit more articulation of your thoughts since you can not read body language as well.
+Remote pair programming can be as simple and efficient as it is in person programming. We recommend using a text editor in which you can share a workspace and some form of video chatting. Other than that, you basically do the same thing as you would in person with a little bit more articulation of your thoughts since you can not read body language as well.
 
-*   [A great blog on how to pair program remotley](http://remotepairprogramming.com/)
+*   [A great blog on how to pair program remotely](http://remotepairprogramming.com/)
 *   [A guide to building A remote Command Line setup](http://zeespencer.com/articles/building-a-remote-pairing-setup/)
 *   [Great guide to what you need to remote program](http://evan.tiggerpalace.com/articles/2011/10/17/some-people-call-me-the-remote-pairing-guy-/)
 *   [Info on some of the best remote programming practices](https://github.com/livingsocial/ls-pair)
 
 ### **What is A Good Project?**
 
-<span data-reactid=".0.1.2.4.1.0">All projects are a good project. Pick a project goal in scope for your skill level and just have fun with it. Just because your project is not ground breaking or has been done before does not mean your project is not good! [www.ideaswatch.com](http://www.ideaswatch.com/startup-ideas/app) <span data-reactid=".0.1.2.4.1.2">is a great site to find project ideas as well.
+All projects are a good project. Pick a project goal in scope for your skill level and just have fun with it. Just because your project is not ground breaking or has been done before does not mean your project is not good! [www.ideaswatch.com](http://www.ideaswatch.com/startup-ideas/app) is a great site to find project ideas as well.
 
 *   [Great site to find project ideas](http://www.ideaswatch.com/startup-ideas/app)
 *   [List of projects to develop coding skills](http://www.linuxtrainingacademy.com/projects/)
@@ -47,7 +47,7 @@ Remote pair programming can be simple and just as efficient as in person program
 ### Tools to Program in Pairs
 
 *   [TMUX](http://tmux.github.io/) Allows multiple users to connect to a single terminal session. Directions here for quick reference [tmux shared session](https://www.howtoforge.com/sharing-terminal-sessions-with-tmux-and-screen) and in [video here](https://www.youtube.com/watch?v=wKEGA8oEWXw&feature=youtu.be)
-*   [Wemux](https://github.com/zolrath/wemux) A simple script that makes shared tmux sessions more easily managable. A great write up on how to here [Simple Remote Pairing with wemux](http://spin.atomicobject.com/2012/04/04/simple-remote-pairing-with-wemux/) by [Mike English](http://spin.atomicobject.com/author/english/).
+*   [Wemux](https://github.com/zolrath/wemux) A simple script that makes shared tmux sessions more easily manageable. A great write up on how to here [Simple Remote Pairing with wemux](http://spin.atomicobject.com/2012/04/04/simple-remote-pairing-with-wemux/) by [Mike English](http://spin.atomicobject.com/author/english/).
 *   [Termbeamer](http://termbeamer.com/) lets two Linux users share a terminal session across the Internet.
 *   [ls-pair](https://github.com/livingsocial/ls-pair) 'Advice and some software tools for doing terminal-based remote pair programming.' by Bruce Campbell from [Living Social](Advice and some software tools for doing terminal-based remote pair programming).
 *   [Tweemux](https://github.com/PeopleAdmin/tweemux) A slim wrapper around tmux to ease remote pairing setup by [PeopleAdmin](https://github.com/PeopleAdmin/tweemux/graphs/contributors).
