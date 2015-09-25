@@ -33,7 +33,7 @@ var ProfileForm = React.createClass({
     this.setState({teacher:'true'});
   },
   onChangeCollaborator: function() {
-    this.setState({collaborater:'true'});
+    this.setState({collaborator:'true'});
   },
   onChangeStudent: function() {
     this.setState({student:'true'});
@@ -44,7 +44,7 @@ var ProfileForm = React.createClass({
   },
   onChangeWant: function(value) {
     var wantTags = value.replace(/ /g, '-')
-    this.valueHolder.want=want; 
+    this.valueHolder.want=wantTags; 
   },
 // onChange sets a value for send object
   componentDidMount: function() {
@@ -61,12 +61,11 @@ var ProfileForm = React.createClass({
         e.preventDefault();
     var that = this;
     var sendObject = {};
-    sendObject.teacher = this.state.teacher;
-    sendObject.collaborator = this.state.collaborator;
-    sendObject.student = this.state.student;
+    sendObject.teacher = this.valueHolder.teacher;
+    sendObject.collaborator = this.valueHolder.collaborator;
+    sendObject.student = this.valueHolder.student;
     sendObject.have = this.valueHolder.have;
     sendObject.want = this.valueHolder.want;
-    console.log(sendObject);
     $.ajax({
       url: '/updateProfile',
       contentType: 'application/json',
