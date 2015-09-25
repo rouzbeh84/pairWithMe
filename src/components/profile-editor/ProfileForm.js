@@ -33,7 +33,7 @@ var ProfileForm = React.createClass({
     this.setState({teacher:'true'});
   },
   onChangeCollaborator: function() {
-    this.setState({collaborater:'true'});
+    this.setState({collaborator:'true'});
   },
   onChangeStudent: function() {
     this.setState({student:'true'});
