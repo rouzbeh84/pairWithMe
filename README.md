@@ -36,7 +36,7 @@ Remote pair programming can be as simple and efficient as it is in person progra
 *   [Great guide to what you need to remote program](http://evan.tiggerpalace.com/articles/2011/10/17/some-people-call-me-the-remote-pairing-guy-/)
 *   [Info on some of the best remote programming practices](https://github.com/livingsocial/ls-pair)
 
-### **What is A Good Project?**
+## **What is A Good Project?**
 
 All projects are a good project. Pick a project goal in scope for your skill level and just have fun with it. Just because your project is not ground breaking or has been done before does not mean your project is not good! [www.ideaswatch.com](http://www.ideaswatch.com/startup-ideas/app) is a great site to find project ideas as well.
 
@@ -44,7 +44,7 @@ All projects are a good project. Pick a project goal in scope for your skill lev
 *   [List of projects to develop coding skills](http://www.linuxtrainingacademy.com/projects/)
 
 
-### Tools to Program in Pairs
+## Tools to Program in Pairs
 
 *   [TMUX](http://tmux.github.io/) Allows multiple users to connect to a single terminal session. Directions here for quick reference [tmux shared session](https://www.howtoforge.com/sharing-terminal-sessions-with-tmux-and-screen) and in [video here](https://www.youtube.com/watch?v=wKEGA8oEWXw&feature=youtu.be)
 *   [Wemux](https://github.com/zolrath/wemux) A simple script that makes shared tmux sessions more easily manageable. A great write up on how to here [Simple Remote Pairing with wemux](http://spin.atomicobject.com/2012/04/04/simple-remote-pairing-with-wemux/) by [Mike English](http://spin.atomicobject.com/author/english/).
