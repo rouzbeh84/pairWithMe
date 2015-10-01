@@ -4,6 +4,8 @@ var gulp = require('gulp');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var gutil = require('gulp-util');
+var uglify = require('gulp-uglify');
+var gzip = require('gulp-gzip');
 var sourcemaps = require('gulp-sourcemaps');
 var assign = require('lodash.assign');
 var nodemon = require('gulp-nodemon');
@@ -40,6 +42,8 @@ function bundle() {
     .pipe(source('bundle.js'))
     // optional, remove if you don't need to buffer file contents
     .pipe(buffer())
+    .pipe(uglify())
+    .pipe(gzip())
     // optional, remove if you dont want sourcemaps
     .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
     // Add transformation tasks to the pipeline here.
@@ -60,6 +64,7 @@ gulp.task('css', function () {
     .pipe(concat('style.css'))
     .pipe(minifyCSS())
     .pipe(rename('style.min.css'))
+    .pipe(gzip())
     .pipe(gulp.dest('./client/css/'));
 });
 gulp.task('css:watch', function () {
