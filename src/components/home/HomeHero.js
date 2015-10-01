@@ -15,7 +15,7 @@ render: function(){
         </p>
       </div>
         <div className="col-xs-12 col-sm-8 col-sm-pull-4">
-        	<img src="./img/img-home-hero.jpg" className="img-responsive img-rounded img-shadow" />
+        	<img src="./img/img-home-hero.webp" className="img-responsive img-rounded img-shadow" />
       	</div>
     </div>
 		);
