@@ -1,7 +1,7 @@
  var compression = require('compression'),
   express = require('express'),
   app = express(),
-  var morgan = require('morgan'),
+  morgan = require('morgan'),
   session = require('express-session'),
   Sequelize = require('sequelize'),
   http = require('http'),
@@ -116,5 +116,5 @@ app.get('*', function (req, res) {
 });
 
 app.use(express.static('client'));
-app.listen(process.env.PORT || 80);
+app.listen(process.env.PORT || 3000);
 module.exports = app;
