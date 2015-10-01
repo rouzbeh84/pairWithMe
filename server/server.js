@@ -1,4 +1,5 @@
- var express = require('express'),
+ var compression = require('compression'),
+  express = require('express'),
   app = express(),
   session = require('express-session'),
   Sequelize = require('sequelize'),
@@ -9,8 +10,7 @@
   ensureAuthenticated = require('./ensureAuthenticated.js'),
   cookieParser = require('cookie-parser'),
   bodyParser = require('body-parser'),
-  express = require('express'),
-  compression = require('compression');
+
 
 /*Connects to Database via sequalize ORM */
 sequelize = new Sequelize(process.env.DATABASE || config.get('database.database'), process.env.DATABASE_USER || config.get('database.user'), process.env.DATABASE_PASSWORD || config.get('database.password'), {
@@ -73,30 +73,18 @@ app.get('/auth/github', passport.authenticate('github'), function(req,res) {
 });
 /** authenticates callback */
 app.get('/auth/github/callback', passport.authenticate('github', {failureRedirect: 'login'}), UserController.signIn);
-
 app.post('/updateProfile', UserController.updateProfile);
-
 app.get('/api/users', UserController.allUsers);
-
 app.get('/api/profile', UserController.getProfile);
-
 app.get('/api/profile/:name', UserController.profileByName);
-
 app.post('/createProject', ProjectController.createProject);
-
 app.get('/api/projects', ProjectController.getProjects);
 app.get('/api/projects/:pageNumber', ProjectController.getProjects);
-
 app.post('/updateProject', ProjectController.updateProject);
-
 app.get('/recentProjects/:number', ProjectController.recentProjects);
-
 app.get('/tags', TagController.getAllTags);
-
 app.post('/tags', TagController.addTags);
-
 app.post('/search', ControllerDirector.search);
-
 app.get('/logout', function (req, res) {
   res.clearCookie('githubID');
   res.clearCookie('token');
@@ -110,8 +98,14 @@ app.get('/logout', function (req, res) {
  */
 app.get('*', function (req, res) {
   res.sendFile(path.resolve(__dirname + '/../client/index.html'));
-});
-
+  res.setHeader('Content-Type', 'text/event-stream')
+  res.setHeader('Cache-Control', 'no-cache')
+  // send a ping approx every 2 seconds
+  var timer = setInterval(function () {
+    res.write('data: ping\n\n')
+    // !!! this is the important part
+    res.flush()
+}, 2000);
 app.use(express.static('client'));
 app.listen(process.env.PORT || 80);
 module.exports = app;
