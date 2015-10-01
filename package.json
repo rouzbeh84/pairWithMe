@@ -4,7 +4,7 @@
   "description": "react site to find pair to program with",
   "main": "index.js",
   "scripts": {
-    "start": "node server/server.js",
+    "start": "forever start --spinSleepTime 10000 server/server.js",
     "dev": "nodemon server/server.js"
   },
   "repository": {
@@ -28,6 +28,7 @@
     "email-templates": "^2.0.1",
     "express": "^4.13.3",
     "express-session": "^1.11.3",
+    "forever": "^0.15.1",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-minify-css": "^1.2.1",
