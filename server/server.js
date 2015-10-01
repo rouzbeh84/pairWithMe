@@ -9,7 +9,8 @@
   ensureAuthenticated = require('./ensureAuthenticated.js'),
   cookieParser = require('cookie-parser'),
   bodyParser = require('body-parser'),
-  express = require('express');
+  express = require('express'),
+  compression = require('compression');
 
 /*Connects to Database via sequalize ORM */
 sequelize = new Sequelize(process.env.DATABASE || config.get('database.database'), process.env.DATABASE_USER || config.get('database.user'), process.env.DATABASE_PASSWORD || config.get('database.password'), {
@@ -47,6 +48,9 @@ var UserController = require('./db_models/userController.js');
 var TagController = require('./db_models/tagController.js');
 var ProjectController = require('./db_models/projectController.js');
 var ControllerDirector = require('./db_models/controllerDirector.js');
+
+// compress all requests
+app.use(compress());
 
 /* Setting up middleware */
 app.use('/', express.static(__dirname + '/../client'));
