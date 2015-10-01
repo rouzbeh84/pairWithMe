@@ -109,5 +109,5 @@ app.get('*', function (req, res) {
 });
 
 app.use(express.static('client'));
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 80);
 module.exports = app;
