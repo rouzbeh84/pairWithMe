@@ -1,6 +1,7 @@
  var compression = require('compression'),
   express = require('express'),
   app = express(),
+  var morgan = require('morgan'),
   session = require('express-session'),
   Sequelize = require('sequelize'),
   http = require('http'),
@@ -52,7 +53,8 @@ var ControllerDirector = require('./db_models/controllerDirector.js');
 
 // compress all requests
 app.use(compression());
-
+// log all http requests
+app.use(morgan('combined'))
 /* Setting up middleware */
 app.use('/', express.static(__dirname + '/../client'));
 app.use(cookieParser());
@@ -64,15 +66,15 @@ app.use(session({
 app.use(passport.initialize()); //middleware to start passport
 app.use(passport.session()); //used for persisten login
 
-/** loading home page */
+// loading home page
 app.get('/', function(req, res) {
   res.sendFile(path.resolve(__dirname + '/../client/index.html'));
 });
-/** request for login, redirects to github.com */
+// request for login, redirects to github.com
 app.get('/auth/github', passport.authenticate('github'), function(req,res) {
   //request will redirect to Githib for authentication
 });
-/** authenticates callback */
+// authenticates callback
 app.get('/auth/github/callback', passport.authenticate('github', {failureRedirect: 'login'}), UserController.signIn);
 
 app.post('/updateProfile', UserController.updateProfile);
