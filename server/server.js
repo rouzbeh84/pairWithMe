@@ -10,6 +10,7 @@
   ensureAuthenticated = require('./ensureAuthenticated.js'),
   cookieParser = require('cookie-parser'),
   bodyParser = require('body-parser'),
+  express = require('express');
 
 
 /*Connects to Database via sequalize ORM */
@@ -50,7 +51,7 @@ var ProjectController = require('./db_models/projectController.js');
 var ControllerDirector = require('./db_models/controllerDirector.js');
 
 // compress all requests
-app.use(compress());
+app.use(compression());
 
 /* Setting up middleware */
 app.use('/', express.static(__dirname + '/../client'));
@@ -73,18 +74,30 @@ app.get('/auth/github', passport.authenticate('github'), function(req,res) {
 });
 /** authenticates callback */
 app.get('/auth/github/callback', passport.authenticate('github', {failureRedirect: 'login'}), UserController.signIn);
+
 app.post('/updateProfile', UserController.updateProfile);
+
 app.get('/api/users', UserController.allUsers);
+
 app.get('/api/profile', UserController.getProfile);
+
 app.get('/api/profile/:name', UserController.profileByName);
+
 app.post('/createProject', ProjectController.createProject);
+
 app.get('/api/projects', ProjectController.getProjects);
 app.get('/api/projects/:pageNumber', ProjectController.getProjects);
+
 app.post('/updateProject', ProjectController.updateProject);
+
 app.get('/recentProjects/:number', ProjectController.recentProjects);
+
 app.get('/tags', TagController.getAllTags);
+
 app.post('/tags', TagController.addTags);
+
 app.post('/search', ControllerDirector.search);
+
 app.get('/logout', function (req, res) {
   res.clearCookie('githubID');
   res.clearCookie('token');
@@ -98,14 +111,9 @@ app.get('/logout', function (req, res) {
  */
 app.get('*', function (req, res) {
   res.sendFile(path.resolve(__dirname + '/../client/index.html'));
-  res.setHeader('Content-Type', 'text/event-stream')
-  res.setHeader('Cache-Control', 'no-cache')
-  // send a ping approx every 2 seconds
-  var timer = setInterval(function () {
-    res.write('data: ping\n\n')
-    // !!! this is the important part
-    res.flush()
-}, 2000);
+  res.flush();
+});
+
 app.use(express.static('client'));
-app.listen(process.env.PORT || 80);
+app.listen(process.env.PORT || 3000);
 module.exports = app;
