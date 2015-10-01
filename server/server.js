@@ -1,4 +1,5 @@
- var express = require('express'),
+ var compression = require('compression'),
+  express = require('express'),
   app = express(),
   session = require('express-session'),
   Sequelize = require('sequelize'),
@@ -10,6 +11,7 @@
   cookieParser = require('cookie-parser'),
   bodyParser = require('body-parser'),
   express = require('express');
+
 
 /*Connects to Database via sequalize ORM */
 sequelize = new Sequelize(process.env.DATABASE || config.get('database.database'), process.env.DATABASE_USER || config.get('database.user'), process.env.DATABASE_PASSWORD || config.get('database.password'), {
@@ -47,6 +49,9 @@ var UserController = require('./db_models/userController.js');
 var TagController = require('./db_models/tagController.js');
 var ProjectController = require('./db_models/projectController.js');
 var ControllerDirector = require('./db_models/controllerDirector.js');
+
+// compress all requests
+app.use(compression());
 
 /* Setting up middleware */
 app.use('/', express.static(__dirname + '/../client'));
@@ -105,7 +110,7 @@ app.get('/logout', function (req, res) {
  page on each route switch
  */
 app.get('*', function (req, res) {
-  res.sendFile(path.resolve(__dirname + '/../client/index.html'));
+  res.sendFile(path.resolve(__dirname + '/../client/index.html', { maxAge: 86400000 }));
 });
 
 app.use(express.static('client'));
