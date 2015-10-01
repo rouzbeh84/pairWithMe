@@ -110,7 +110,7 @@ app.get('/logout', function (req, res) {
  page on each route switch
  */
 app.get('*', function (req, res) {
-  res.sendFile(path.resolve(__dirname + '/../client/index.html'));
+  res.sendFile(path.resolve(__dirname + '/../client/index.html', { maxAge: 86400000 }));
   res.flush();
 });
 

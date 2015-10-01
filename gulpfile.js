@@ -42,11 +42,11 @@ function bundle() {
     .pipe(source('bundle.js'))
     // optional, remove if you don't need to buffer file contents
     .pipe(buffer())
-    .pipe(uglify())
-    .pipe(gzip())
     // optional, remove if you dont want sourcemaps
     .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
     // Add transformation tasks to the pipeline here.
+    .pipe(uglify())
+    .pipe(gzip())
     .pipe(sourcemaps.write('./')) // writes .map file
     .pipe(gulp.dest('./client/build/'));
 }
