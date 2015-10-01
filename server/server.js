@@ -1,7 +1,7 @@
  var compression = require('compression'),
   express = require('express'),
   app = express(),
-  var morgan = require('morgan'),
+  morgan = require('morgan'),
   session = require('express-session'),
   Sequelize = require('sequelize'),
   http = require('http'),

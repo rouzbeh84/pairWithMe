@@ -60,6 +60,7 @@
   },
   "devDependencies": {
     "compression": "^1.6.0",
-    "gulp-gzip": "^1.2.0"
+    "gulp-gzip": "^1.2.0",
+    "gulp-webp": "^2.3.0"
   }
 }
