@@ -6,7 +6,6 @@ var watchify = require('watchify'),
   gutil = require('gulp-util'),
   uglify = require('gulp-uglify'),
   gzip = require('gulp-gzip'),
-  webp = require('gulp-webp'),
   sourcemaps = require('gulp-sourcemaps'),
   assign = require('lodash.assign'),
   nodemon = require('gulp-nodemon'),
@@ -70,12 +69,6 @@ gulp.task('css', function () {
 });
 gulp.task('css:watch', function () {
   gulp.watch('./src/styles/*.css', ['css']);
-});
-// webp all the images
-gulp.task('img', function () {
-    return gulp.src('./src/img/*.jpg')
-        .pipe(webp())
-        .pipe(gulp.dest('./client/img/'));
 });
 // call all tasks and start server on port 80
 gulp.task('default', ['js', 'css', 'img', 'css:watch', 'server']);
