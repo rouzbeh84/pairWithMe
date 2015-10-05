@@ -44,7 +44,7 @@ var ProfileForm = React.createClass({
   },
   onChangeWant: function(value) {
     var wantTags = value.replace(/ /g, '-')
-    this.valueHolder.want=wantTags; 
+    this.valueHolder.want=wantTags;
   },
 // onChange sets a value for send object
   componentDidMount: function() {
@@ -58,7 +58,7 @@ var ProfileForm = React.createClass({
   },
   handle: function (e) {
     // sets object keys and values based on input to send to database
-        e.preventDefault();
+    e.preventDefault();
     var that = this;
     var sendObject = {};
     sendObject.teacher = this.state.teacher;
