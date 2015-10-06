@@ -107,6 +107,10 @@ app.get('/logout', function (req, res) {
   res.redirect('/');
 })
 
+app.get('/google81294c5074b32aac.html', function (req, res) {
+  res.sendFile(path.resolve(__dirname + './google81294c5074b32aac.html'));
+})
+
 /* This is our initial get request for our html and allows us to remove the #
  It along with our work on the client side allows us to not reload the whole
  page on each route switch
@@ -116,5 +120,5 @@ app.get('*', function (req, res) {
 });
 
 app.use(express.static('client'));
-app.listen(process.env.PORT || 80);
+app.listen(process.env.PORT || 3000);
 module.exports = app;

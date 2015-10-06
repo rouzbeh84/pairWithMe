@@ -48,6 +48,7 @@
     "pg": "~4.4.1",
     "pg-hstore": "~2.3.2",
     "react": "^0.13.3",
+    "react-g-analytics": "^0.1.5",
     "react-router": "^0.13.3",
     "react-select": "^0.6.7",
     "reactify": "^1.1.1",
